@@ -40,11 +40,17 @@ function create_grid(size) {
         div.onmouseover = function() {
             // only update color if not already changed
             if (!div.classList.contains('divbox_over')){
+                div.style.opacity = 0.1;
                 div.classList.add('divbox_over');
                 div.style.backgroundColor = getRandomColor();
-            }
+            } else { // Increase opacity when mouseover again
+                if (getComputedStyle(div).opacity < 1) { // only to maximum value of 1 though 
+                    div.style.opacity = Number(getComputedStyle(div).opacity) + 0.2;
+                    
+                }  
+            }}
 
-        }
+        
         // append to the main container 
         main_box.appendChild(div)
 }}
