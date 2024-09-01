@@ -38,8 +38,12 @@ function create_grid(size) {
         
         // add mouse over event
         div.onmouseover = function() {
-            div.classList.add('divbox_over');
-            div.style.backgroundColor = getRandomColor();
+            // only update color if not already changed
+            if (!div.classList.contains('divbox_over')){
+                div.classList.add('divbox_over');
+                div.style.backgroundColor = getRandomColor();
+            }
+
         }
         // append to the main container 
         main_box.appendChild(div)
