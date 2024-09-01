@@ -1,8 +1,8 @@
 
+let main_box = document.querySelector("#main_container");
+
 
 function create_grid(size) {
-    let main_box = document.querySelector("#main_container");
-
     total_squares = size * size
 
     // create 16 divs
@@ -23,17 +23,27 @@ function create_grid(size) {
         main_box.appendChild(div)
 }}
 
-create_grid(8);
+create_grid(4);
 
 
 
 let button_input = document.querySelector("button");
 button_input.addEventListener("click", () => {
     let userInput = prompt("How many squares per side?: ");
+    userInput = Number(userInput);
+
+    if (isNaN(userInput)) {
+        alert('Please enter a valid number');
+    } else if (userInput > 100) {
+        alert('Please enter a number less than 100');
+    } else {
+        // remove old squares
+        while (main_box.firstChild) {
+            main_box.removeChild(main_box.firstChild);
+        }
+        // Create new grid
+        create_grid(userInput)
     
-
-    // remove old grid
-    main_box.remove();
-
+    }
 })
 
