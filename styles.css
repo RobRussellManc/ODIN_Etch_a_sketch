@@ -1,0 +1,43 @@
+
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+#main_container { 
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25vmin;
+    width: 50vmin; /* 50% of the smaller viewport dimension */
+    height: 50vmin; /* 50% of the smaller viewport dimension */
+    background-color: #f0f0f0; /* Example background colour */
+    justify-content: center;
+    align-items: center;
+    border: 5px solid blue;
+
+}
+
+.divbox {
+    display: flex;
+    height: 25%;
+    width: 25%;
+    border: 2px solid green;
+    background-color: grey;
+    box-sizing: border-box;
+}
+
+.divbox_over {
+    background-color: black;
+
+}
+
+#button_container {
+    display: flex;
+    margin-top: 30px;
+    flex-basis: 50%;
+}
